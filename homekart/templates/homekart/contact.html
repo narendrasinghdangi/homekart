@@ -1,0 +1,31 @@
+{% extends 'homekart/basic.html' %}
+
+{% block title %} contact Us {% endblock %}
+
+{% block body %}
+<div class="container my-3">
+    <h3> Contact Us For Any Quary</h3>
+    <form action="/homekart/contact/" method="POST"> {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone no.</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+        </div>
+
+        <div class="form-group my-3">
+            <label for="desc">How may we help you ?</label>
+            <textarea name="desc" id="desc" cols="116" rows="5"></textarea>
+        </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+{% endblock %}
